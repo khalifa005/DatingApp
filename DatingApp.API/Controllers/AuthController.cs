@@ -53,7 +53,8 @@ namespace DatingApp.API.Controllers
 
             if (logedinUser == null)
                 return Unauthorized();
-
+            
+            //create token
             var claims = new[]{
                 new Claim(ClaimTypes.NameIdentifier,logedinUser.Id.ToString()),
                 new Claim(ClaimTypes.Name,logedinUser.Username)
